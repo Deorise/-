@@ -7,6 +7,10 @@
     font-size: 16px;
     color: white;
   }
+ a {
+    color: rgb(196, 196, 196);
+    text-decoration: none;
+  }
 
   a {
     text-decoration: none;
@@ -15,16 +19,35 @@
 
   /* index CSS */
 
-  a {
-    color: rgb(196, 196, 196);
-    text-decoration: none;
-  }
-
   .info {
     display: flex;
     margin-top: 30px;
   }
   
+  #secret-btn {
+    background: transparent;
+    padding: 20px 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    border: transparent;
+  }
+
+  #secret-btn:hover {
+    animation: scrtbtn 200ms ease-in-out forwards;
+  }
+
+  @keyframes scrtbtn {
+    0% {
+      background-color: rgba(209, 59, 209, 0.329);
+    }
+
+    100% {
+      background-color: rgb(209, 59, 209);
+      filter: drop-shadow(0px 0px 20px rgb(134, 37, 134));
+    }
+  }
+
   #old {
     font-size: 13px;
     margin-bottom: 20px;
@@ -69,7 +92,7 @@
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  /* animation: bloom 100ms ease forwards; */
+  /* animation: bloom 100ms ease-in-out forwards; */
 }
 
 @keyframes bloom {
@@ -118,11 +141,11 @@
   margin-bottom: 1100px;
 }
 
-.wrapper {
+#wrapper {
   position: relative;
   bottom: -1000px;
   right: -270px;
-  filter: drop-shadow(0px 0px 100px rgb(173, 48, 173));
+
 }
 
 .heart {
@@ -152,9 +175,8 @@
 .heart::after {
   top: 0px;
   left: -100px;
+  color: #0f0f0f00;
 }
-
-
 
 
 
@@ -174,6 +196,8 @@
   opacity: 0.7;
   text-decoration: underline;
 }
+
+
 
 .text2 {
   text-align: center;
