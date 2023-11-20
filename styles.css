@@ -9,21 +9,33 @@
   }
 
   a {
-    color: rgb(196, 196, 196);
     text-decoration: none;
   }
 
-  a:hover {
-    text-decoration: underline;
-  }
 
-  .info a:visited {
-    color: rgb(155, 155, 155);
+  /* index CSS */
+
+  a {
+    color: rgb(196, 196, 196);
+    text-decoration: none;
   }
 
   .info {
     display: flex;
     margin-top: 30px;
+  }
+  
+  #old {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .info a:hover {
+    text-decoration: underline;
+  }
+
+  .info a:visited {
+    color: rgb(155, 155, 155);
   }
 
   @media only screen and (max-width: 700px) {
@@ -33,30 +45,39 @@
     }
   }
 
-.dp {
-  text-align: center;
-  display: block;
-  margin: 0, auto;
-  font-size: 20px;
-  background-color: rgb(108, 134, 219);
-  border-radius: 5px;
-  border: transparent;
-  margin: 0 auto;
-  height: 50px;
-  width: 200px;
-  cursor: pointer;
-  font-weight: bold;
-  color: white; 
-  font-size: 17px; 
-}
+  .dp {
+    text-align: center;
+    display: block;
+    margin: 0, auto;
+    font-size: 20px;
+    background-color: rgb(108, 134, 219);
+    border-radius: 5px;
+    border: transparent;
+    margin: 0 auto;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white; 
+    font-size: 17px; 
+    box-shadow: 0px 3px 5px rgb(82, 102, 167);
+  }
 
-a {
-  text-decoration: none;
-}
-
-.dp:hover {
+.dp:hover {   
   opacity: 0.9;
-} 
+  animation-name: bloom;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  /* animation: bloom 100ms ease forwards; */
+}
+
+@keyframes bloom {
+  100%{
+  filter: drop-shadow(3px 3px 30px #1770e5);
+  /* box-shadow: 0px 0px 30px #1770e5; */
+  }
+}
 
 .container {
   max-width: 750px;
@@ -67,6 +88,7 @@ a {
   width: 400px;
   border-radius: 30px;
   margin-bottom: 50px;
+  box-shadow: 0px 3px 10px rgb(110, 110, 110);
 }
 
 .info p {
@@ -92,9 +114,56 @@ a {
   margin-bottom: 10px;
 }
 
+.space {
+  margin-bottom: 1100px;
+}
+
+.wrapper {
+  position: relative;
+  bottom: -1000px;
+  right: -270px;
+  filter: drop-shadow(0px 0px 30px rgb(114, 31, 114));
+}
+
+.heart {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(160, 43, 160);
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(160, 43, 160);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -100px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0px;
+  left: -100px;
+}
+
+
+
+
+
+
+/* index2 CSS */
+
 .pedo {
   text-align: center;
-  margin-top: 400px;
+  margin-top: 380px;
   font-family: inherit;
   font-size: 100px;
   cursor: pointer;
@@ -103,6 +172,7 @@ a {
 
 .pedo:hover {
   opacity: 0.7;
+  text-decoration: underline;
 }
 
 .text2 {
@@ -110,10 +180,7 @@ a {
   display: block;
   color: #747474;
   text-transform: capitalize;
+
 }
 
-#old {
-  font-size: 13px;
-  margin-bottom: 20px;
-}
 
